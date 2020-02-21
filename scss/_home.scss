@@ -1,0 +1,968 @@
+body {
+    background-color: rgba($text-color, 0.1);
+}
+
+.main_Container {
+  width: 100%;
+  height: 344em;
+  background-color: white;
+  overflow-x: hidden;
+  padding-top: 1em;
+  bottom: 1em;
+  position: relative;
+}
+
+.welcomeBar{
+  z-index: 999;
+ color: $text-color;
+  display: inline;
+  left: 12em;
+  position: relative;
+  margin-right: 26em;
+  font-size: $small-font;
+}
+#pageName {
+  margin-right: 12em;
+  font-size: 30px;
+  left: 5em;
+  font-weight: bold;
+  color: $main-green;
+}
+/* Mixin function to provide button functionality */
+@mixin button{
+  border: 1px solid #3bada9;
+  border-radius: 26px;
+  font-size: 15px;
+  background: #3bada9;
+  color: white;
+  text-align: center;
+}
+@function calc-percent($num1, $num2) {
+  @return ($num1 / $num2) * 100%;
+}
+/* Mixin function to provide heading functionality */
+@mixin headings{
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: $main-green;
+}
+/* Mixin function to provide sub heading functionality */
+@mixin subheadings{
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: $main-green;
+}
+/* Mixin function to provide display value */
+@mixin display($val){
+  #{$display}: $val;
+}
+/* Mixin function to provide display type */
+@mixin inlineDisplay{
+  display: inline;
+}
+/* Mixin function to provide margin 0 functionality */
+@mixin margin0{
+  margin: 0;
+}
+/* Mixin function to provide generally assign values to attributes */
+@mixin assignProp($attr, $val) {
+  #{$attr}: $val;
+}
+/* Mixin function to provide margin 0 functionality */
+@mixin zIndex($val) {
+  #{$zIndex}: $val;
+}
+/* Mixin function to provide fontsize functionality */
+@mixin fontsize($val){
+  #{$fontsize}: $val;
+}
+/* Mixin function to provide color functionality */
+@mixin color($val){
+  #{$color}: $val;
+}
+/* Mixin function to provide height functionality */
+@mixin height($val){
+  #{$height}: $val;
+}
+@mixin positionRelative{
+  position: relative;
+}
+.navBar_elements {
+ @include inlineDisplay;
+}
+.minElements{
+  @include assignProp(margin,1em);
+  @include assignProp(top,30px);
+  @include assignProp(margin-bottom,2em);
+@include positionRelative;
+
+  @include assignProp(font-size,$small-font);
+  @include assignProp(color,$text-color);
+  text-decoration: none;
+  list-style: none;
+}
+.reqQuote {
+  @include assignProp(background,$main-green);
+  @include assignProp(padding,14px);
+  border-radius: 20px;
+  color: white;
+}
+.cleaning_background{
+  /* Calling Mixing to perform the required operation */
+  @include assignProp(margin-bottom,2em);
+  background-blend-mode: soft-light;
+  background-image: url(imgg/Cleaning_Background.jpg);
+  height: 35em;
+  background-size:calc-percent(850px, 1000px);
+  background-color: gray;
+}
+a:hover{
+  color:$main-green;
+}
+#navBar{
+  height: 6em;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  background: white;
+  width: 100%;
+  padding-top: 9px;
+}
+
+.welcomeBar_hr{
+@include margin0;
+ @include positionRelative;
+  top: 1.75px;
+  z-index: 999;
+}
+.cleaning_Text{
+  width: 38%;
+  margin: 0;
+  @include positionRelative;
+  margin: auto;
+  top: 3em;
+  right: 4em;
+  @include fontsize(37px);
+  @include color(white);
+}
+.cleaning_details{
+  /* Calling Mixing to perform the required operation */
+  @include assignProp(position,relative);
+  top: 9em;
+  @include fontsize(14px);
+  left: 17em;
+  @include color(white);
+}
+.getTouch{
+  @include assignProp(position,relative);
+  @include assignProp(top,10em);
+  /* Calling Mixing to perform the required operation */
+  @include assignProp(left,15.5em);
+  @include assignProp(width,11%);
+  padding: 12px;
+  border: 1px solid $main-green;
+  border-radius: 26px;
+  @include fontsize(15px);
+  background: $main-green;
+  @include color(white);
+}
+
+.ChooseUs {
+  padding: 1em;
+  margin-bottom: 6em;
+  .ChooseUs_title {
+  @include headings;
+  }
+  .grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    @include assignProp(position,relative);
+    @include assignProp(top,2em);
+    @include assignProp( align-items,center);
+    width: 69%;
+    @include assignProp(left,12em);
+    border: none;
+  }
+
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* border: 1px solid rgba(0, 0, 0, 0.8); */
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  .choose_img {
+    @include positionRelative;
+    height: 4em;
+    border-radius: 57px;
+    background-image: url(imgg/chooseCircle.png);
+    clip-path: circle(50% at 50% 50%);
+    background-size: 93%;
+    background-repeat: no-repeat;
+    width: 4em;
+    left: 2em;
+  }
+
+  .choose_desc {
+    @include positionRelative;
+    @include height(1em);
+    @include subheadings;
+    right: 0.5em;
+    font-size: 21px;
+  }
+
+  .choose_data {
+    @include positionRelative;
+    @include height(1em);
+    @include fontsize(13px);
+  }
+
+}
+
+#cleanServices {
+  height: 32em;
+  padding: 1em;
+  .servicesTitle {
+    @include headings;
+  }
+  .grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    @include assignProp(position,relative);
+    @include assignProp(top,2em);
+    @include assignProp( align-items,center);
+    width: 69%;
+    @include assignProp(left,8em);
+    border: none;
+    grid-column-gap: 23px;
+  }
+
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  .services_img {
+    @include positionRelative;
+    height: 4em;
+    width: 6em;
+}
+
+.services_desc {
+  @include positionRelative;
+@include height(1em);
+@include subheadings;
+right: 0.5em;
+  font-size: 17px;
+}
+
+.services_data {
+  @include positionRelative;
+@include height(1em);
+@include fontsize(13px);
+}
+.resCleaning{
+background-image: url(imgg/resCleaning.png);
+background-size: 100%;
+background-repeat: no-repeat;
+}
+.comCleaning{
+background-image: url(imgg/comCleaning.png);
+  background-size: 100%;
+background-repeat: no-repeat;
+}
+.officeCleaning{
+background-image: url(imgg/officeCleaning.png);
+  background-size: 100%;
+background-repeat: no-repeat;
+}
+.seasonCleaning{
+background-image: url(imgg/seasonCleaning.png);
+  background-size: 100%;
+background-repeat: no-repeat;
+}
+.moreServices{
+  @include positionRelative;
+  top: 7em;
+  left: 36.5em;
+  width: 10%;
+  padding: 13px;
+  @include button;
+}
+}
+#aboutCompany{
+
+  .aboutLeft {
+    grid-area: left;
+    background-image: url(imgg/aboutCompanyLady.png);
+    height: 30em;
+    background-size: 98%;
+    background-repeat: no-repeat;
+    @include positionRelative;
+    left: 6em;
+    bottom: 2em;
+  }
+  .aboutRight {
+    grid-area: right;
+  }
+.aboutRight_1{
+  font-size: 16px;
+  font-style: italic;
+  padding: 5px;
+  color: gray;
+}
+.aboutRight_2{
+  font-size: 30px;
+  color: $main-green;
+  margin-bottom: 4px;
+}
+  .aboutRight_3{
+    font-size: 13px;
+    color: gray;
+  }
+  .right_section{
+    height: 6em;
+    margin-bottom: 1em;
+    @include positionRelative;
+    left: 4em;
+  }
+.right_extra{
+  @include positionRelative;
+  text-align: left;
+  left: 6em;
+}
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+            'left left right right '
+            'left left right right '
+            'left left right right ';
+    grid-gap: 10px;
+
+  }
+
+  .grid-container > div {
+
+    text-align: center;
+    padding-right: 5em;
+  }
+.subImg{
+  background-image: url(imgg/aboutQuestion.png);
+  height: 6em;
+  background-size: 10%;
+  background-repeat: no-repeat;
+  top: 0.5em;
+  @include positionRelative;
+  left: 2em;
+}
+.subText1{
+  @include positionRelative;
+  bottom: 3.75em;
+  font-size: 22px;
+  text-align: left;
+  left: 6em;
+  color: $main-green;
+}
+.subText2{
+  @include positionRelative;
+  bottom: 5em;
+  text-align: left;
+  left: 9.5em;
+  font-size: 14px;
+  color: gray;
+}
+  .more_Info{
+    @include button;
+    width: 16%;
+    padding: 12px;
+    @include positionRelative;
+    left: 2em;
+    top: 2em;
+  }
+}
+.more_Section{
+  height: 11em;
+  width: 100%;
+  margin-bottom: 3em;
+  background: $main-green;
+
+  .more_sec1{
+    @include positionRelative;
+    top: 2.5em;
+    font-size: 30px;
+    left: 8em;
+    color: white;
+  }
+  .more_sec2{
+    /* Calling Mixing to perform the required operation */
+    @include button;
+    background-color: white;
+    color: $main-green;
+    @include positionRelative;
+    top: 2.5em;
+    left: 62em;
+    width: 11%;
+    padding: 12px;
+
+  }
+}
+
+#cleanServices {
+  height: 32em;
+  padding: 1em;
+  .servicesTitle {
+    @include headings;
+  }
+  .grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    @include assignProp(position,relative);
+    @include assignProp(top,2em);
+    @include assignProp( align-items,center);
+    width: 69%;
+    @include assignProp(left,8em);
+    border: none;
+    grid-column-gap: 23px;
+  }
+
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  .services_img {
+    @include positionRelative;
+    height: 4em;
+    width: 6em;
+  }
+
+  .services_desc {
+    @include positionRelative;
+    @include height(1em);
+    @include subheadings;
+    right: 0.5em;
+    font-size: 17px;
+  }
+
+  .services_data {
+    @include positionRelative;
+    @include height(1em);
+    @include fontsize(13px);
+  }
+  .resCleaning{
+    background-image: url(imgg/resCleaning.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .comCleaning{
+    background-image: url(imgg/comCleaning.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .officeCleaning{
+    background-image: url(imgg/officeCleaning.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .seasonCleaning{
+    background-image: url(imgg/seasonCleaning.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .moreServices{
+    @include positionRelative;
+    top: 7em;
+    left: 36.5em;
+    width: 10%;
+    padding: 13px;
+    @include button;
+  }
+}
+#ourTeam {
+  padding: 1em;
+  margin-bottom: 6em;
+  .ourTeam_title {
+    @include headings;
+  }
+  .grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    @include assignProp(position,relative);
+    /* Calling Mixing to perform the required operation */
+    @include assignProp(top,2em);
+    @include assignProp( align-items,center);
+    width: 69%;
+    @include assignProp(left,12em);
+    border: none;
+  }
+
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* border: 1px solid rgba(0, 0, 0, 0.8); */
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  .team_img1 {
+    @include positionRelative;
+    height: 4em;
+    border-radius: 57px;
+    background-image: url(imgg/james.png);
+    clip-path: circle(50% at 50% 50%);
+    background-size: 93%;
+    background-repeat: no-repeat;
+    width: 4em;
+    left: 2em;
+  }
+  .team_img2 {
+    @include positionRelative;
+    height: 4em;
+    border-radius: 57px;
+    background-image: url(imgg/doe.png);
+    clip-path: circle(50% at 50% 50%);
+    background-size: 93%;
+    background-repeat: no-repeat;
+    width: 4em;
+    left: 2em;
+  }
+  .team_img3 {
+    @include positionRelative;
+    height: 4em;
+    border-radius: 57px;
+    background-image: url(imgg/mason.png);
+    clip-path: circle(50% at 50% 50%);
+    background-size: 93%;
+    background-repeat: no-repeat;
+    width: 4em;
+    left: 2em;
+  }
+
+  .team_desc {
+    @include positionRelative;
+    /* Calling Mixing to perform the required operation */
+    @include height(1em);
+    @include subheadings;
+    right: 0.5em;
+    font-size: 21px;
+  }
+
+  .team_data {
+    @include positionRelative;
+    height: 1em;
+    font-size: 13px;
+    bottom: 1.5em;
+    right: 1em;
+  }
+  .team_img4{
+    @include positionRelative;
+    border-radius: 57px;
+    background-image: url(imgg/question4s.png);
+    background-size: 30%;
+    background-repeat: no-repeat;
+    width: 8em;
+    left: 2.75em;
+    bottom: 1em;
+  }
+
+}
+#priceTable {
+  height: 25em;
+  background: #f1f1f1;
+  padding: 1em;
+  .priceTitle {
+    @include headings;
+  }
+  .grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    /* Calling Mixing to perform the required operation */
+    @include assignProp(position,relative);
+    @include assignProp(top,2em);
+    @include assignProp( align-items,center);
+    width: 69%;
+    @include assignProp(left,13em);
+    border: none;
+    grid-column-gap: 23px;
+  }
+  .grid-item:hover{
+    border: 3px solid #3bada9;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    text-align: center;
+    height: 28em;
+    padding-bottom: 0;
+    height: 21.5em;
+  }
+  .price_img {
+    background-image: url(imgg/aboutQuestion.png);
+    background-size: 54%;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 3em;
+    width: 5em;
+    left: 6em;
+    margin-top: 8px;
+  }
+
+
+  .price_desc {
+    position: relative;
+    height: 1em;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #3bada9;
+    right: 0.5em;
+    left: 1px;
+    font-size: 17px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+
+
+  }
+  .price_hr{
+   width: 60%;
+  }
+  .price_120{
+    @include positionRelative;
+    height: 1em;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #3bada9;
+    left: 0px;
+    font-size: 28px;
+    color: gray;
+  }
+
+  .price_data {
+    position: relative;
+    /* Calling Mixing to perform the required operation */
+    @include height(1em);
+    @include fontsize(13px);
+    margin-bottom: 2em;
+  }
+.buyNow{
+  box-sizing: border-box;
+  @include positionRelative;
+  top: 5.1em;
+  font-size: 19px;
+  background: $main-green;
+  padding: 4px;
+}
+}
+#latestBlog{
+    height: 32em;
+    padding: 1em;
+    .Latest_title {
+      @include headings;
+    }
+
+    .grid-container {
+      display: inline-grid;
+      grid-template-columns: auto auto auto;
+      @include assignProp(position,relative);
+      @include assignProp(top,2em);
+      @include assignProp( align-items,center);
+      width: 69%;
+      @include assignProp(left,13em);
+      border: none;
+      grid-column-gap: 23px;
+    }
+
+    .grid-item {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      font-size: 30px;
+      text-align: center;
+    }
+    .latest_img {
+      @include positionRelative;
+      height: 4em;
+      width: 6em;
+    }
+  .latest_date{
+    font-size: 13px;
+    text-align: left;
+    @include positionRelative;
+    top: 1em;
+    padding: 0;
+    height: 2em;
+  }
+    .latest_desc {
+      @include positionRelative;
+      @include height(1em);
+      @include subheadings;
+      right: 1.5em;
+      font-size: 17px;
+    }
+
+    .latest_data {
+      @include positionRelative;
+      @include height(1em);
+      @include fontsize(13px);
+      right: 1.5em;
+    }
+    .latest1{
+      background-image: url(imgg/latestBlog1.png);
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+    .latest2{
+      background-image: url(imgg/latestBlog2.png);
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+    .latest3{
+      background-image: url(imgg/latestBlog3.png);
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  .latest_By_cont{
+margin-top: 1em;
+  }
+  .latest_circle{
+    background-image: url(imgg/latestgrayblock.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 35px;;
+  }
+.latest_by{
+  @include positionRelative;
+  font-size: 17px;
+  bottom: 1.75em;
+}
+}
+#testimonial{
+
+.testimonial_title{
+  @include headings;
+}
+  .testimonial_image{
+    background-image: url(imgg/testimonial.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 63px;
+    width: 48px;
+    @include positionRelative;
+    top: 1.5em;
+    left: 34em;
+    padding: 3.5em;
+    margin-bottom: 2.5em;
+  }
+  .testimonial_text{
+    @include positionRelative;
+    @include height(1em);
+    @include subheadings;
+    right: 1.5em;
+    font-size: 17px;
+    color: gray;
+    font-style: italic;
+    margin-bottom: 1em;
+  }
+  .testimonial_button{
+@include button;
+    width: 21%;
+    padding: 7px;
+    @include positionRelative;
+    top: 1.5em;
+    left: 32em;
+    border-radius: 0px;
+    font-style: italic;
+    font-weight: bold;
+  }
+}
+#imageCarousal{
+  height: 12em;
+  margin-top: 5em;
+  margin-bottom: 12em;
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
+  .grid-item {
+    text-align: center;
+    height: 15em;
+  }
+  .proj_text{
+    visibility: hidden;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    top: 5em;
+    @include positionRelative;
+  }
+  .project1{
+    background-image: url(imgg/project1.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .project2{
+    background-image: url(imgg/project2.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .project3{
+    background-image: url(imgg/project3.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .project4{
+    background-image: url(imgg/project4.jpg);
+    background-size: 114%;
+    background-repeat: no-repeat;
+  }
+  .Project_title{
+    @include headings;
+    margin-bottom: 2em;
+  }
+
+}
+#imageCarousal .project1:hover{
+  opacity: 0.5;
+  color: black;
+  .proj_text{
+  visibility: visible;
+  }
+}
+#imageCarousal .project4:hover{
+  opacity: 0.5;
+  color: black;
+  .proj_text{
+    visibility: visible;
+    color: black;
+    z-index: 10;
+  }
+}
+#imageCarousal .project2:hover{
+  opacity: 0.5;
+  color: black;
+  .proj_text{
+    visibility: visible;
+    color: black;
+    z-index: 10;
+  }
+}
+#imageCarousal .project3:hover{
+  opacity: 0.5;
+  color: black;
+  .proj_text{
+    visibility: visible;
+    color: black;
+    z-index: 10;
+  }
+}
+#InstantQuote{
+  background-image: url(imgg/InstantQuote.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 35em;
+  width: 100%;
+  .formTag{
+    height: 32em;
+    @include positionRelative;
+    top: 1em;
+    width: 30%;
+    left: 35em;
+    background-color: white;
+  }
+  .InstantQuote_title{
+    @include headings;
+    top: 0.75em;
+    @include positionRelative;
+  }
+  .inputTag{
+    width: 77%;
+    margin: 40px;
+    height: 40px;
+    margin-bottom: 0;
+    margin-top: 4em;
+    background-color: #f1f1f1;
+  border: none;
+    padding-left: 10px;
+    color: gray;
+    font-style: italic;
+  }
+  .InstantQuote_button{
+    @include button;
+    border-radius: 0;
+    @include positionRelative;
+    bottom: 43px;
+    padding: 3px;
+    padding-bottom: -14px;
+    padding-top: 16px;
+    height: 31px;
+    bottom: 32px;
+  }
+}
+#footer{
+  margin-top: 33px;
+  @include positionRelative;
+  right: 4em;
+  .InstantQuote_title{
+    @include headings;
+  }
+  .item1{
+    width: 80%;
+  }
+  .item2{
+    @include positionRelative;
+    right: 15em;
+    width: 150%;
+    height: 10em;
+    grid-template-columns: auto auto auto !important;
+    @include positionRelative;
+    top: 1em;
+  }
+  .InstantQuote_text{
+    font-size: 13px;
+    margin-top: 15px;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .grid-item {
+    text-align: center;
+  }
+  .question5{
+    background-image: url(imgg/question5green.png);
+    background-size: 25%;
+    background-repeat: no-repeat;
+    height: 4em;
+    @include positionRelative;
+    left: 9em;
+    top: 0.5em;
+  }
+  .coll{
+    width: 49%;
+    @include positionRelative;
+    left: 8em;
+    display: inline;
+    font-weight: bold;
+
+  }
+  .ul1{
+    @include positionRelative;
+    left: 2em;
+  }
+  .ul2{
+    @include positionRelative;
+    left: 0.5em;
+  }
+
+}
+a:hover{
+  cursor:pointer;
+}
+.reqQuote,.getTouch,.moreServices,.more_Info,.more_sec2,.buyNow,.InstantQuote_button:hover{
+  cursor:pointer;
+}
